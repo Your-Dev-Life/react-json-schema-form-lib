@@ -13,7 +13,8 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "test": "tsdx test --passWithNoTests",
+    "test": "tsdx test",
+    "coverage": "tsdx test --coverage",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
@@ -26,14 +27,14 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "tsdx lint"
+      "pre-push": "yarn lint && yarn test"
     }
   },
   "prettier": {
     "printWidth": 80,
     "semi": true,
     "singleQuote": true,
-    "trailingComma": "es5"
+    "trailingComma": "all"
   },
   "name": "react-json-schema-form-lib",
   "author": "Marcel Silva",
