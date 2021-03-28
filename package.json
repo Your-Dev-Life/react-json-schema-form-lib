@@ -14,7 +14,7 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test",
-    "coverage": "tsdx test --coverage",
+    "test:coverage": "tsdx test --coverage",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
@@ -27,7 +27,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn lint && yarn test"
+      "pre-push": "npm run lint && npm run test:coverage"
     }
   },
   "prettier": {
@@ -52,11 +52,15 @@
   "devDependencies": {
     "@babel/core": "^7.13.13",
     "@size-limit/preset-small-lib": "^4.10.1",
+    "@storybook/addon-actions": "^6.1.21",
     "@storybook/addon-essentials": "^6.1.21",
     "@storybook/addon-info": "^5.3.21",
     "@storybook/addon-links": "^6.1.21",
     "@storybook/addons": "^6.1.21",
     "@storybook/react": "^6.1.21",
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^13.0.16",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
     "babel-loader": "^8.2.2",
